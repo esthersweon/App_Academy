@@ -1,0 +1,17 @@
+<h1>Sign In</h1>
+Users:
+<% @users.each do |user|%>
+<%= user.email%>,
+<%end%>
+<form action="<%= session_url %>" method="post">
+  <label>Email
+    <input type="string" name="user[email]" value="<%= @user.email %>">
+  </label>
+
+  <label>Password
+    <input type="password" name="user[password]" >
+  </label>
+
+  <input type="submit" value="Create New User">
+</form>
+

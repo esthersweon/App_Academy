@@ -1,0 +1,19 @@
+<h1>Create a New Circle</h1>
+
+<form action="<%= user_circles_url(current_user)%>" method="post">
+
+  <label>Title
+    <input type="text" name="circle[title]" value="">
+  </label>
+
+  <% @users.each do |user| %>
+      <br>
+    <input type="checkbox" name="circle[member_ids][]" value="<%= user.id%>">
+    <%= user.email%>
+
+  <%end%>
+
+  <br>
+
+  <input type="submit" value="Create Circle">
+</form>

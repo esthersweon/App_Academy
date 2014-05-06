@@ -1,0 +1,15 @@
+<h1> Make a New Post</h1>
+
+<form action="<%= user_posts_url(current_user) %>" method="POST">
+  <label>Body
+    <input type="text" name="post[body]">
+  </label>
+
+  <%@circles.each do |circle|%>
+    <br><label> <%=circle.title%>
+      <input type="checkbox" name="post[circle_ids][]" value="<%= circle.id%>">
+    </label>
+  <%end%>
+
+  <br><input type="submit" value="Post!">
+</form>

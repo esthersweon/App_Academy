@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>FriendCircle</title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<%= link_to "Sign Up", new_user_url%>
+<%= link_to "Sign In", new_session_url%>
+<%if current_user%>
+  <%= link_to "Create Circle", new_user_circle_url(current_user)%>
+  <%= link_to "Create Post", new_user_post_url(current_user)%>
+<%end%>
+<% unless flash[:errors].nil? %>
+  <%flash[:errors].each do |flash|%>
+    <%= flash%>
+  <%end%>
+<%end%>
+
+<% unless current_user.nil? %>
+  <%= current_user.email%>
+  <%= button_to "Log Out", session_url, method: :delete %>
+<% end %>
+
+<%= yield %>
+<br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+<img src="http://blogs.technet.com/cfs-file.ashx/__key/communityserver-blogs-components-weblogfiles/00-00-01-01-35/e8nZC.gif">
+</body>
+</html>

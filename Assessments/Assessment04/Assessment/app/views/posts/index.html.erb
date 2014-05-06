@@ -1,0 +1,11 @@
+<h1>All Posts</h1>
+
+<ul>
+<% @posts.each do |post| %>
+	<% next if post.user_id != current_user.id %>
+	<li><%= link_to post.title, post_url(post) %></li>
+<% end %>
+
+</ul>
+
+<%= link_to "Create Post", new_post_url %>
