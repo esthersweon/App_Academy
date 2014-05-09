@@ -1,0 +1,297 @@
+
+
+Started GET "/" for 127.0.0.1 at 2014-04-17 09:21:31 -0700
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /Users/jeff/.rvm/gems/ruby-1.9.3-p545/gems/railties-4.0.4/lib/rails/templates/rails/welcome/index.html.erb (3.2ms)
+Completed 200 OK in 67ms (Views: 38.5ms | ActiveRecord: 0.0ms)
+  [1m[36m (1.2ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (0.9ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateGyms (20140417162225)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.4ms)[0m  [1mCREATE TABLE "gyms" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) NOT NULL, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (1.5ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20140417162225"]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36mGym Load (2.1ms)[0m  [1mSELECT "gyms".* FROM "gyms"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (15.2ms)[0m  [1mINSERT INTO "gyms" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Thu, 17 Apr 2014 16:31:45 UTC +00:00], ["name", "Rocky's"], ["updated_at", Thu, 17 Apr 2014 16:31:45 UTC +00:00]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "gyms" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 17 Apr 2014 16:31:45 UTC +00:00], ["name", "Sweat Haus"], ["updated_at", Thu, 17 Apr 2014 16:31:45 UTC +00:00]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "gyms" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Thu, 17 Apr 2014 16:31:45 UTC +00:00], ["name", "Do you even lift, bro?"], ["updated_at", Thu, 17 Apr 2014 16:31:45 UTC +00:00]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "gyms" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 17 Apr 2014 16:31:45 UTC +00:00], ["name", "Jackson's MMA"], ["updated_at", Thu, 17 Apr 2014 16:31:45 UTC +00:00]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "gyms" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Thu, 17 Apr 2014 16:31:45 UTC +00:00], ["name", "Jim's Gym"], ["updated_at", Thu, 17 Apr 2014 16:31:45 UTC +00:00]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "gyms" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 17 Apr 2014 16:31:45 UTC +00:00], ["name", "Tim's Gym"], ["updated_at", Thu, 17 Apr 2014 16:31:45 UTC +00:00]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[36mGym Load (3.1ms)[0m  [1mSELECT "gyms".* FROM "gyms"[0m
+  [1m[35mGym Load (0.3ms)[0m  SELECT "gyms".* FROM "gyms"
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (4.6ms)[0m  [1mINSERT INTO "gyms" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Thu, 17 Apr 2014 16:32:11 UTC +00:00], ["name", "Rocky's"], ["updated_at", Thu, 17 Apr 2014 16:32:11 UTC +00:00]]
+  [1m[35m (7.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "gyms" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 17 Apr 2014 16:32:11 UTC +00:00], ["name", "Sweat Haus"], ["updated_at", Thu, 17 Apr 2014 16:32:11 UTC +00:00]]
+  [1m[36m (1.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "gyms" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Thu, 17 Apr 2014 16:32:11 UTC +00:00], ["name", "Do you even lift, bro?"], ["updated_at", Thu, 17 Apr 2014 16:32:11 UTC +00:00]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "gyms" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 17 Apr 2014 16:32:11 UTC +00:00], ["name", "Jackson's MMA"], ["updated_at", Thu, 17 Apr 2014 16:32:11 UTC +00:00]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "gyms" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Thu, 17 Apr 2014 16:32:11 UTC +00:00], ["name", "Jim's Gym"], ["updated_at", Thu, 17 Apr 2014 16:32:11 UTC +00:00]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "gyms" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 17 Apr 2014 16:32:11 UTC +00:00], ["name", "Tim's Gym"], ["updated_at", Thu, 17 Apr 2014 16:32:11 UTC +00:00]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[36mGym Load (0.3ms)[0m  [1mSELECT "gyms".* FROM "gyms"[0m
+  [1m[36m (1.3ms)[0m  [1mCREATE TABLE "gyms" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) NOT NULL, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (1.0ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36m (0.8ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (0.7ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20140417162225')[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (5.3ms)[0m  INSERT INTO "gyms" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 17 Apr 2014 16:32:26 UTC +00:00], ["name", "Rocky's"], ["updated_at", Thu, 17 Apr 2014 16:32:26 UTC +00:00]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "gyms" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Thu, 17 Apr 2014 16:32:26 UTC +00:00], ["name", "Sweat Haus"], ["updated_at", Thu, 17 Apr 2014 16:32:26 UTC +00:00]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "gyms" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 17 Apr 2014 16:32:26 UTC +00:00], ["name", "Do you even lift, bro?"], ["updated_at", Thu, 17 Apr 2014 16:32:26 UTC +00:00]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "gyms" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Thu, 17 Apr 2014 16:32:26 UTC +00:00], ["name", "Jackson's MMA"], ["updated_at", Thu, 17 Apr 2014 16:32:26 UTC +00:00]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "gyms" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 17 Apr 2014 16:32:26 UTC +00:00], ["name", "Jim's Gym"], ["updated_at", Thu, 17 Apr 2014 16:32:26 UTC +00:00]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "gyms" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Thu, 17 Apr 2014 16:32:26 UTC +00:00], ["name", "Tim's Gym"], ["updated_at", Thu, 17 Apr 2014 16:32:26 UTC +00:00]]
+  [1m[35m (0.9ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateFighters (20140417163908)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.4ms)[0m  [1mCREATE TABLE "fighters" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) NOT NULL, "weight" integer NOT NULL, "gym_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (0.2ms)[0m  CREATE INDEX "index_fighters_on_gym_id" ON "fighters" ("gym_id")
+  [1m[36mSQL (1.6ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140417163908"]]
+  [1m[35m (7.2ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mFighter Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "fighters" WHERE "fighters"."name" = 'Killer Jeff' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mFighter Exists (0.3ms)[0m  [1mSELECT 1 AS one FROM "fighters" WHERE "fighters"."name" = 'Killer Jeff' LIMIT 1[0m
+  [1m[35mSQL (7.6ms)[0m  INSERT INTO "fighters" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 17 Apr 2014 16:53:04 UTC +00:00], ["name", "Killer Jeff"], ["updated_at", Thu, 17 Apr 2014 16:53:04 UTC +00:00]]
+SQLite3::ConstraintException: fighters.weight may not be NULL: INSERT INTO "fighters" ("created_at", "name", "updated_at") VALUES (?, ?, ?)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36m (7.7ms)[0m  [1mCREATE TABLE "fighters" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) NOT NULL, "weight" integer NOT NULL, "gym_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (1.0ms)[0m  CREATE INDEX "index_fighters_on_gym_id" ON "fighters" ("gym_id")
+  [1m[36m (0.9ms)[0m  [1mCREATE TABLE "gyms" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) NOT NULL, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (1.0ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36m (0.9ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.2ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (0.8ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20140417163908')[0m
+  [1m[35m (1.4ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20140417162225')
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mGym Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "gyms" WHERE "gyms"."name" = 'Rocky''s' LIMIT 1[0m
+  [1m[35mSQL (22.5ms)[0m  INSERT INTO "gyms" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 17 Apr 2014 16:56:35 UTC +00:00], ["name", "Rocky's"], ["updated_at", Thu, 17 Apr 2014 16:56:35 UTC +00:00]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mGym Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "gyms" WHERE "gyms"."name" = 'Sweat Haus' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "gyms" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 17 Apr 2014 16:56:35 UTC +00:00], ["name", "Sweat Haus"], ["updated_at", Thu, 17 Apr 2014 16:56:35 UTC +00:00]]
+  [1m[36m (1.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mGym Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "gyms" WHERE "gyms"."name" = 'Do you even lift, bro?' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "gyms" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 17 Apr 2014 16:56:35 UTC +00:00], ["name", "Do you even lift, bro?"], ["updated_at", Thu, 17 Apr 2014 16:56:35 UTC +00:00]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mGym Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "gyms" WHERE "gyms"."name" = 'Jackson''s MMA' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "gyms" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 17 Apr 2014 16:56:35 UTC +00:00], ["name", "Jackson's MMA"], ["updated_at", Thu, 17 Apr 2014 16:56:35 UTC +00:00]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mGym Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "gyms" WHERE "gyms"."name" = 'Jim''s Gym' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "gyms" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 17 Apr 2014 16:56:35 UTC +00:00], ["name", "Jim's Gym"], ["updated_at", Thu, 17 Apr 2014 16:56:35 UTC +00:00]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mGym Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "gyms" WHERE "gyms"."name" = 'Tim''s Gym' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "gyms" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 17 Apr 2014 16:56:35 UTC +00:00], ["name", "Tim's Gym"], ["updated_at", Thu, 17 Apr 2014 16:56:35 UTC +00:00]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mFighter Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "fighters" WHERE "fighters"."name" = 'Apocalypse Annie' LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "fighters" ("created_at", "gym_id", "name", "updated_at", "weight") VALUES (?, ?, ?, ?, ?)  [["created_at", Thu, 17 Apr 2014 16:56:35 UTC +00:00], ["gym_id", 2], ["name", "Apocalypse Annie"], ["updated_at", Thu, 17 Apr 2014 16:56:35 UTC +00:00], ["weight", 115]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[36mFighter Load (0.2ms)[0m  [1mSELECT "fighters".* FROM "fighters" ORDER BY "fighters"."id" ASC LIMIT 1[0m
+  [1m[35mFighter Load (0.3ms)[0m  SELECT "fighters".* FROM "fighters" ORDER BY "fighters"."id" ASC LIMIT 1
+  [1m[36mFighter Load (0.1ms)[0m  [1mSELECT "fighters".* FROM "fighters" ORDER BY "fighters"."id" ASC LIMIT 1[0m
+  [1m[35mGym Load (3.2ms)[0m  SELECT "gyms".* FROM "gyms" WHERE "gyms"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mFighter Load (0.2ms)[0m  [1mSELECT "fighters".* FROM "fighters" ORDER BY "fighters"."id" ASC LIMIT 1[0m
+  [1m[35mGym Load (0.3ms)[0m  SELECT "gyms".* FROM "gyms" WHERE "gyms"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mFighter Load (0.2ms)[0m  [1mSELECT "fighters".* FROM "fighters" ORDER BY "fighters"."id" ASC LIMIT 1[0m
+  [1m[35mGym Load (0.2ms)[0m  SELECT "gyms".* FROM "gyms" WHERE "gyms"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mFighter Load (0.3ms)[0m  [1mSELECT "fighters".* FROM "fighters" ORDER BY "fighters"."id" ASC LIMIT 1[0m
+  [1m[35mGym Load (0.2ms)[0m  SELECT "gyms".* FROM "gyms" WHERE "gyms"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36m (2.6ms)[0m  [1mCREATE TABLE "fighters" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) NOT NULL, "weight" integer NOT NULL, "gym_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (0.9ms)[0m  CREATE INDEX "index_fighters_on_gym_id" ON "fighters" ("gym_id")
+  [1m[36m (0.9ms)[0m  [1mCREATE TABLE "gyms" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) NOT NULL, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (0.9ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36m (0.9ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.2ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (1.0ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20140417163908')[0m
+  [1m[35m (1.3ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20140417162225')
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mGym Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "gyms" WHERE "gyms"."name" = 'Rocky''s' LIMIT 1[0m
+  [1m[35mSQL (26.6ms)[0m  INSERT INTO "gyms" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 17 Apr 2014 17:04:54 UTC +00:00], ["name", "Rocky's"], ["updated_at", Thu, 17 Apr 2014 17:04:54 UTC +00:00]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mGym Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "gyms" WHERE "gyms"."name" = 'Sweat Haus' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "gyms" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 17 Apr 2014 17:04:54 UTC +00:00], ["name", "Sweat Haus"], ["updated_at", Thu, 17 Apr 2014 17:04:54 UTC +00:00]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mGym Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "gyms" WHERE "gyms"."name" = 'Do you even lift, bro?' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "gyms" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 17 Apr 2014 17:04:54 UTC +00:00], ["name", "Do you even lift, bro?"], ["updated_at", Thu, 17 Apr 2014 17:04:54 UTC +00:00]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mGym Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "gyms" WHERE "gyms"."name" = 'Jackson''s MMA' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "gyms" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 17 Apr 2014 17:04:54 UTC +00:00], ["name", "Jackson's MMA"], ["updated_at", Thu, 17 Apr 2014 17:04:54 UTC +00:00]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mGym Exists (0.4ms)[0m  [1mSELECT 1 AS one FROM "gyms" WHERE "gyms"."name" = 'Jim''s Gym' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "gyms" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 17 Apr 2014 17:04:54 UTC +00:00], ["name", "Jim's Gym"], ["updated_at", Thu, 17 Apr 2014 17:04:54 UTC +00:00]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mGym Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "gyms" WHERE "gyms"."name" = 'Tim''s Gym' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "gyms" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 17 Apr 2014 17:04:54 UTC +00:00], ["name", "Tim's Gym"], ["updated_at", Thu, 17 Apr 2014 17:04:54 UTC +00:00]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mFighter Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "fighters" WHERE "fighters"."name" = 'Apocalypse Annie' LIMIT 1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "fighters" ("created_at", "gym_id", "name", "updated_at", "weight") VALUES (?, ?, ?, ?, ?)  [["created_at", Thu, 17 Apr 2014 17:04:54 UTC +00:00], ["gym_id", 2], ["name", "Apocalypse Annie"], ["updated_at", Thu, 17 Apr 2014 17:04:54 UTC +00:00], ["weight", 115]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mFighter Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "fighters" WHERE "fighters"."name" = 'Rowdy Ronda Rousey' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "fighters" ("created_at", "gym_id", "name", "updated_at", "weight") VALUES (?, ?, ?, ?, ?)  [["created_at", Thu, 17 Apr 2014 17:04:54 UTC +00:00], ["gym_id", 2], ["name", "Rowdy Ronda Rousey"], ["updated_at", Thu, 17 Apr 2014 17:04:54 UTC +00:00], ["weight", 135]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mFighter Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "fighters" WHERE "fighters"."name" = 'Liz Girlrilla Carmouche' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "fighters" ("created_at", "gym_id", "name", "updated_at", "weight") VALUES (?, ?, ?, ?, ?)  [["created_at", Thu, 17 Apr 2014 17:04:54 UTC +00:00], ["gym_id", 2], ["name", "Liz Girlrilla Carmouche"], ["updated_at", Thu, 17 Apr 2014 17:04:54 UTC +00:00], ["weight", 135]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[36mGym Load (0.2ms)[0m  [1mSELECT "gyms".* FROM "gyms" WHERE "gyms"."name" = 'Sweat Haus' LIMIT 1[0m
+  [1m[35mFighter Load (2.8ms)[0m  SELECT "fighters".* FROM "fighters" WHERE "fighters"."gym_id" = ?  [["gym_id", 2]]
+  [1m[36mFighter Load (0.4ms)[0m  [1mSELECT "fighters".* FROM "fighters" WHERE "fighters"."weight" = 135 AND "fighters"."gym_id" = 2 LIMIT 1[0m
+  [1m[35mFighter Load (0.4ms)[0m  SELECT "fighters".* FROM "fighters" WHERE "fighters"."weight" = 135 AND "fighters"."gym_id" = 2
+  [1m[36m (0.4ms)[0m  [1mSELECT "fighters"."name" FROM "fighters" WHERE "fighters"."weight" = 135 AND "fighters"."gym_id" = 2[0m
+  [1m[35mFighter Load (0.3ms)[0m  SELECT "fighters".* FROM "fighters"
+  [1m[36mFighter Load (2.0ms)[0m  [1mSELECT "fighters".* FROM "fighters" WHERE "fighters"."weight" = 135[0m
+  [1m[35mFighter Load (0.4ms)[0m  SELECT "fighters".* FROM "fighters" WHERE "fighters"."weight" = 115
+  [1m[36mFighter Load (0.4ms)[0m  [1mSELECT "fighters".* FROM "fighters" WHERE ("fighters"."weight" BETWEEN 100 AND 200)[0m
+  [1m[35mGym Load (0.2ms)[0m  SELECT "gyms".* FROM "gyms" WHERE "gyms"."name" = 'Sweat Haus' LIMIT 1
+  [1m[36mFighter Load (5.3ms)[0m  [1mSELECT "fighters".* FROM "fighters" WHERE "fighters"."gym_id" = ? AND "fighters"."weight" = 135[0m  [["gym_id", 2]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateTattoos (20140417171707)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.5ms)[0m  [1mCREATE TABLE "tattoos" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) NOT NULL, "description" varchar(255) NOT NULL, "fighter_id" integer NOT NULL, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (1.5ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20140417171707"]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (1.4ms)[0m  [1mCREATE TABLE "fighters" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) NOT NULL, "weight" integer NOT NULL, "gym_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (0.8ms)[0m  CREATE INDEX "index_fighters_on_gym_id" ON "fighters" ("gym_id")
+  [1m[36m (0.8ms)[0m  [1mCREATE TABLE "gyms" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) NOT NULL, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (0.8ms)[0m  CREATE TABLE "tattoos" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) NOT NULL, "description" varchar(255) NOT NULL, "fighter_id" integer NOT NULL, "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (0.9ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (0.8ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.2ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (0.8ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20140417171707')
+  [1m[36m (0.9ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20140417162225')[0m
+  [1m[35m (0.7ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20140417163908')
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mGym Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "gyms" WHERE "gyms"."name" = 'Rocky''s' LIMIT 1[0m
+  [1m[35mSQL (24.2ms)[0m  INSERT INTO "gyms" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 17 Apr 2014 17:28:54 UTC +00:00], ["name", "Rocky's"], ["updated_at", Thu, 17 Apr 2014 17:28:54 UTC +00:00]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mGym Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "gyms" WHERE "gyms"."name" = 'Sweat Haus' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "gyms" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 17 Apr 2014 17:28:54 UTC +00:00], ["name", "Sweat Haus"], ["updated_at", Thu, 17 Apr 2014 17:28:54 UTC +00:00]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mGym Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "gyms" WHERE "gyms"."name" = 'Do you even lift, bro?' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "gyms" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 17 Apr 2014 17:28:54 UTC +00:00], ["name", "Do you even lift, bro?"], ["updated_at", Thu, 17 Apr 2014 17:28:54 UTC +00:00]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mGym Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "gyms" WHERE "gyms"."name" = 'Jackson''s MMA' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "gyms" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 17 Apr 2014 17:28:54 UTC +00:00], ["name", "Jackson's MMA"], ["updated_at", Thu, 17 Apr 2014 17:28:54 UTC +00:00]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mGym Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "gyms" WHERE "gyms"."name" = 'Jim''s Gym' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "gyms" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 17 Apr 2014 17:28:54 UTC +00:00], ["name", "Jim's Gym"], ["updated_at", Thu, 17 Apr 2014 17:28:54 UTC +00:00]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mGym Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "gyms" WHERE "gyms"."name" = 'Tim''s Gym' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "gyms" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 17 Apr 2014 17:28:54 UTC +00:00], ["name", "Tim's Gym"], ["updated_at", Thu, 17 Apr 2014 17:28:54 UTC +00:00]]
+  [1m[36m (1.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mFighter Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "fighters" WHERE "fighters"."name" = 'Michelle Karate Hottie Waterson' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "fighters" ("created_at", "gym_id", "name", "updated_at", "weight") VALUES (?, ?, ?, ?, ?)  [["created_at", Thu, 17 Apr 2014 17:28:54 UTC +00:00], ["gym_id", 2], ["name", "Michelle Karate Hottie Waterson"], ["updated_at", Thu, 17 Apr 2014 17:28:54 UTC +00:00], ["weight", 115]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mFighter Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "fighters" WHERE "fighters"."name" = 'Rowdy Ronda Rousey' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "fighters" ("created_at", "gym_id", "name", "updated_at", "weight") VALUES (?, ?, ?, ?, ?)  [["created_at", Thu, 17 Apr 2014 17:28:54 UTC +00:00], ["gym_id", 2], ["name", "Rowdy Ronda Rousey"], ["updated_at", Thu, 17 Apr 2014 17:28:54 UTC +00:00], ["weight", 135]]
+  [1m[36m (1.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mFighter Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "fighters" WHERE "fighters"."name" = 'Liz Girlrilla Carmouche' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "fighters" ("created_at", "gym_id", "name", "updated_at", "weight") VALUES (?, ?, ?, ?, ?)  [["created_at", Thu, 17 Apr 2014 17:28:54 UTC +00:00], ["gym_id", 2], ["name", "Liz Girlrilla Carmouche"], ["updated_at", Thu, 17 Apr 2014 17:28:54 UTC +00:00], ["weight", 135]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mFighter Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "fighters" WHERE "fighters"."name" = 'Meisha Cupcake Tate' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "fighters" ("created_at", "gym_id", "name", "updated_at", "weight") VALUES (?, ?, ?, ?, ?)  [["created_at", Thu, 17 Apr 2014 17:28:54 UTC +00:00], ["gym_id", 3], ["name", "Meisha Cupcake Tate"], ["updated_at", Thu, 17 Apr 2014 17:28:54 UTC +00:00], ["weight", 135]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "tattoos" ("created_at", "description", "fighter_id", "name", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", Thu, 17 Apr 2014 17:28:54 UTC +00:00], ["description", "a freakin' petunia, what are you an idiot?"], ["fighter_id", 4], ["name", "Petunia"], ["updated_at", Thu, 17 Apr 2014 17:28:54 UTC +00:00]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "tattoos" ("created_at", "description", "fighter_id", "name", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", Thu, 17 Apr 2014 17:28:54 UTC +00:00], ["description", "A an energy molecule"], ["fighter_id", 1], ["name", "ATP"], ["updated_at", Thu, 17 Apr 2014 17:28:54 UTC +00:00]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "tattoos" ("created_at", "description", "fighter_id", "name", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", Thu, 17 Apr 2014 17:28:54 UTC +00:00], ["description", "Former Secretary of State, floating in a bowl of rice"], ["fighter_id", 3], ["name", "Condelezza"], ["updated_at", Thu, 17 Apr 2014 17:28:54 UTC +00:00]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "tattoos" ("created_at", "description", "fighter_id", "name", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", Thu, 17 Apr 2014 17:28:54 UTC +00:00], ["description", "her own face"], ["fighter_id", 2], ["name", "stealthy salty selfie, onthe shelfie, wealthy and healthy"], ["updated_at", Thu, 17 Apr 2014 17:28:54 UTC +00:00]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[36mFighter Load (0.2ms)[0m  [1mSELECT "fighters".* FROM "fighters" ORDER BY "fighters"."id" ASC LIMIT 1[0m
+  [1m[35mFighter Load (0.4ms)[0m  SELECT "fighters".* FROM "fighters" ORDER BY "fighters"."id" ASC LIMIT 1
+  [1m[36mTattoo Load (4.4ms)[0m  [1mSELECT "tattoos".* FROM "tattoos" WHERE "tattoos"."fighter_id" = ?[0m  [["fighter_id", 1]]
+  [1m[35mGym Load (0.2ms)[0m  SELECT "gyms".* FROM "gyms" WHERE "gyms"."name" = 'Sweat Haus' LIMIT 1
+  [1m[36mTattoo Load (0.3ms)[0m  [1mSELECT "tattoos".* FROM "tattoos" INNER JOIN "fighters" ON "tattoos"."fighter_id" = "fighters"."id" WHERE "fighters"."gym_id" = ?[0m  [["gym_id", 2]]
+  [1m[35m (0.5ms)[0m  SELECT "tattoos"."name", "tattoos"."description" FROM "tattoos" INNER JOIN "fighters" ON "tattoos"."fighter_id" = "fighters"."id" WHERE "fighters"."gym_id" = ?  [["gym_id", 2]]
+  [1m[36mGym Load (0.9ms)[0m  [1mSELECT "gyms".* FROM "gyms" WHERE "gyms"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mGym Load (0.9ms)[0m  SELECT "gyms".* FROM "gyms" WHERE "gyms"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mGym Load (0.1ms)[0m  [1mSELECT "gyms".* FROM "gyms" WHERE "gyms"."name" = 'Sweat Haus' LIMIT 1[0m
+  [1m[35mFighter Load (0.3ms)[0m  SELECT "fighters".* FROM "fighters" WHERE "fighters"."gym_id" = ?  [["gym_id", 2]]
+  [1m[36mTattoo Load (0.3ms)[0m  [1mSELECT "tattoos".* FROM "tattoos" WHERE "tattoos"."fighter_id" = ?[0m  [["fighter_id", 1]]
+  [1m[35mTattoo Load (0.2ms)[0m  SELECT "tattoos".* FROM "tattoos" WHERE "tattoos"."fighter_id" = ?  [["fighter_id", 2]]
+  [1m[36mTattoo Load (0.1ms)[0m  [1mSELECT "tattoos".* FROM "tattoos" WHERE "tattoos"."fighter_id" = ?[0m  [["fighter_id", 3]]
+  [1m[35mGym Load (0.3ms)[0m  SELECT "gyms".* FROM "gyms" WHERE "gyms"."name" = 'Sweat Haus' LIMIT 1
+  [1m[36mFighter Load (0.2ms)[0m  [1mSELECT "fighters".* FROM "fighters" WHERE "fighters"."gym_id" = ?[0m  [["gym_id", 2]]
+  [1m[35mTattoo Load (0.2ms)[0m  SELECT "tattoos".* FROM "tattoos" WHERE "tattoos"."fighter_id" IN (1, 2, 3)
+  [1m[36mFighter Load (0.4ms)[0m  [1mSELECT "fighters".* FROM "fighters" WHERE "fighters"."gym_id" = ?[0m  [["gym_id", 2]]
+  [1m[35mTattoo Load (0.4ms)[0m  SELECT "tattoos".* FROM "tattoos" WHERE "tattoos"."fighter_id" IN (1, 2, 3)
+  [1m[36mFighter Load (0.9ms)[0m  [1mSELECT "fighters".* FROM "fighters" WHERE "fighters"."gym_id" = ?[0m  [["gym_id", 2]]
+  [1m[35mTattoo Load (0.2ms)[0m  SELECT "tattoos".* FROM "tattoos" WHERE "tattoos"."fighter_id" IN (1, 2, 3)
+  [1m[36mGym Load (0.2ms)[0m  [1mSELECT "gyms".* FROM "gyms" WHERE "gyms"."name" = 'Sweat Haus' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT "fighters"."id" AS t0_r0, "fighters"."name" AS t0_r1, "fighters"."weight" AS t0_r2, "fighters"."gym_id" AS t0_r3, "fighters"."created_at" AS t0_r4, "fighters"."updated_at" AS t0_r5, "tattoos"."id" AS t1_r0, "tattoos"."name" AS t1_r1, "tattoos"."description" AS t1_r2, "tattoos"."fighter_id" AS t1_r3, "tattoos"."created_at" AS t1_r4, "tattoos"."updated_at" AS t1_r5 FROM "fighters" LEFT OUTER JOIN "tattoos" ON "tattoos"."fighter_id" = "fighters"."id" WHERE "fighters"."gym_id" = ?  [["gym_id", 2]]
+  [1m[36mFighter Load (0.3ms)[0m  [1mSELECT "fighters".* FROM "fighters" ORDER BY "fighters"."id" ASC LIMIT 1[0m
+  [1m[35mFighter Load (0.2ms)[0m  SELECT "fighters".* FROM "fighters" ORDER BY "fighters"."id" ASC LIMIT 1
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "tattoos" WHERE "tattoos"."fighter_id" = ?[0m  [["fighter_id", 1]]
+  [1m[35mFighter Load (0.4ms)[0m  SELECT "fighters".* FROM "fighters"
+  [1m[36mFighter Load (0.3ms)[0m  [1mSELECT "fighters".* FROM "fighters"[0m
