@@ -1,9 +1,0 @@
-<h1>All Subs</h1>
-
-<ul>
-<% @subs.each do |sub| %>
-	 	<li> <%= link_to sub.name, sub_url(sub) %>  <%= button_to("Delete", sub_url(sub), method: :delete) if is_moderator?(sub)%></li>
-<% end %>
-</ul>
-
-<%= link_to "Create New Sub", new_sub_url %>
