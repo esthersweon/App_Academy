@@ -237,9 +237,7 @@ class Knight < SteppingPiece
     end.select do |x, y|
       ( self.ref_board[x, y].nil? ) || ( self.ref_board[x,y].color != self.color )
     end
-
   end
-
 end
 
 class Queen < SlidingPiece
