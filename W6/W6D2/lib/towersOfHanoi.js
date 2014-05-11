@@ -48,8 +48,7 @@ var reader = readline.createInterface({
 
           if ((res1 <= 0 || res1 >= 4) || (res2 <= 0 || res2 >= 4)) {
             console.log("Not a valid tower");
-          }
-          else if (towerFrom.stack.length === 0) {
+          } else if (towerFrom.stack.length === 0) {
             console.log("Empty tower!");
           } else if (towerTo.stack.length === 0){
             towerTo.addDisc(towerFrom.removeDisc());
