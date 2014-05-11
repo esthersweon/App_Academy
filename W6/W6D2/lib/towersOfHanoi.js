@@ -8,8 +8,6 @@ var reader = readline.createInterface({
 (function (root) {
   var Hanoi = root.Hanoi = (root.Hanoi || {});
 
-
-
   var Tower = Hanoi.Tower = function (arr) {
     this.stack = arr;
   }
