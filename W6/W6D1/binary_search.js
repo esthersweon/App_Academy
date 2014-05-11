@@ -1,4 +1,4 @@
-var bsearch = function(array, target) {
+var bsearch = function (array, target) {
   if(array.length == 0) {
     return null;
   }

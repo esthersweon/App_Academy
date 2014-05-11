@@ -3,8 +3,6 @@ function Student(firstName, lastName) {
   this.courses = [];
 }
 
-
-
 Student.prototype.enroll = function(course) {
   if (this.courses.indexOf(course) == -1){
     this.courses.push(course);
