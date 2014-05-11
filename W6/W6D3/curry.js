@@ -1,3 +1,6 @@
+//takes an integer (how many numbers to sum) and returns a function that can be 
+//successively called with single arguments until it finally returns a sum
+
 var curriedSum = function(numArgs){
   var numbers = [];
   var _curriedSum = function(num){
@@ -17,6 +20,10 @@ var curriedSum = function(numArgs){
 var sum = curriedSum(4); //returns a function that knows to add numArgs times
 sum(5)(30)(20)(1); //calls resulting function on argument numArgs times
 
+
+
+
+
 Function.prototype.curry = function(numArgs) {
   var that = this;
   var args = [];
@@ -33,11 +40,13 @@ Function.prototype.curry = function(numArgs) {
   return _curry;
 };
 
+
+
 var printer = function(a, b, c) {
   console.log(a);
   console.log(b);
   console.log(c);
 }
 
-var blah = printer.curry(3);
-blah("annie")("bob")("carl");
+var printThreeArguments = printer.curry(3);
+printThreeArguments("annie")("bob")("carl");
