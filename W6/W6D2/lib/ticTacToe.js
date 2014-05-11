@@ -75,21 +75,6 @@ var reader = readline.createInterface({
     };
   };
 
-  var ComputerPlayer = TicTacToe.ComputerPlayer = function(name) {
-    this.name = name;
-  };
-
-  ComputerPlayer.prototype.move = function(mark) {
-    while (true) {
-      var row = Math.floor(Math.random() * 3);
-      var col = Math.floor(Math.random() * 3);
-
-      if (game.board.empty([row, col])) {
-        return [row, col];
-      }
-    }
-  };
-
   var Game = TicTacToe.Game = function(player1, player2) {
     this.board = new Board();
     this.players = {x: player1, o: player2};
