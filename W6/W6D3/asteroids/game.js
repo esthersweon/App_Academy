@@ -25,21 +25,6 @@
     return asteroids;
   };
 
-  Game.prototype.draw = function() {
-    this.ctx.clearRect(0,0,500,500);
-
-    ctx.drawImage(this.image, 0, 0, Game.DIM_X, Game.DIM_Y);
-
-    for (var i = 0; i < this.asteroids.length; i++){
-      this.asteroids[i].draw(this.ctx);
-    }
-    this.ship.draw(this.ctx);
-
-    for (var i = 0; i < this.bullets.length; i++) {
-      this.bullets[i].draw(this.ctx);
-    }
-  };
-
   Game.prototype.move = function() {
     for (var i = 0; i < this.asteroids.length; i++){
       this.asteroids[i].move();
@@ -52,38 +37,19 @@
 
   };
 
-  Game.prototype.step = function() {
-    this.move();
-    this.draw();
-    this.isOutOfBounds();
-    this.checkCollisions();
-  };
+  Game.prototype.draw = function() {
+    this.ctx.clearRect(0,0, Game.DIM_X, Game.DIM_Y);
 
-  Game.prototype.isOutOfBounds = function(){
-    this.removeAsteroids();
-    this.removeBullets();
-    this.removeShip();
-  };
+    ctx.drawImage(this.image, 0, 0, Game.DIM_X, Game.DIM_Y);
 
-  Game.prototype.start = function() {
-    this.bindKeyHandlers();
-    var that = this;
-    // window.setInterval returns a number (ID) representing the timer
-    // we use this later to clear the interval (stop the game/ timer)
-    this.intervalTimer = window.setInterval(that.step.bind(that), Game.FPS);
-  };
-
-  Game.prototype.checkCollisions = function() {
-    for(var i = 0; i < this.asteroids.length; i++) {
-      if (this.asteroids[i].isCollidedWith(this.ship)) {
-        alert("The game has ended");
-        this.stop();
-      }
+    for (var i = 0; i < this.asteroids.length; i++){
+      this.asteroids[i].draw(this.ctx);
     }
-  };
+    this.ship.draw(this.ctx);
 
-  Game.prototype.stop = function() {
-    clearInterval(this.intervalTimer);
+    for (var i = 0; i < this.bullets.length; i++) {
+      this.bullets[i].draw(this.ctx);
+    }
   };
 
   Game.prototype.removeAsteroids = function() {
@@ -115,6 +81,32 @@
     }
   };
 
+  Game.prototype.isOutOfBounds = function(){
+    this.removeAsteroids();
+    this.removeBullets();
+    this.removeShip();
+  };
+
+  Game.prototype.checkCollisions = function() {
+    for(var i = 0; i < this.asteroids.length; i++) {
+      if (this.asteroids[i].isCollidedWith(this.ship)) {
+        alert("The game has ended");
+        this.stop();
+      }
+    }
+  };
+
+  Game.prototype.step = function() {
+    this.move();
+    this.draw();
+    this.isOutOfBounds();
+    this.checkCollisions();
+  };
+
+  Game.prototype.fireBullet = function() {
+    this.bullets.push(this.ship.fireBullet() );
+  };
+
   Game.prototype.bindKeyHandlers = function() {
     var that = this;
     key('i', function(){ that.ship.power([0,-1]) });
@@ -124,20 +116,16 @@
     key('space', function(){ that.fireBullet() });
   };
 
-  Game.prototype.fireBullet = function() {
-    this.bullets.push(this.ship.fireBullet() );
+  Game.prototype.start = function() {
+    this.bindKeyHandlers();
+    var that = this;
+    // window.setInterval returns a number (ID) representing the timer
+    // we use this later to clear the interval and stop the game (in Game.prototype.stop) 
+    this.intervalTimer = window.setInterval(that.step.bind(that), Game.FPS);
   };
 
-  Game.prototype.removeAsteroid = function(i) {
-    this.asteroids.splice(i, 1);
-  };
-
-  Game.prototype.removeBullet = function(bullet) {
-    for(var i = this.bullets.length - 1; i >= 0; i--) {
-      if (this.bullets[i] == bullet){
-        this.bullets.splice(i, 1);
-      }
-    }
+  Game.prototype.stop = function() {
+    clearInterval(this.intervalTimer);
   };
 
 })(this);
