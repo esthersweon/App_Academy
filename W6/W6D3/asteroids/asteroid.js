@@ -14,19 +14,20 @@
   Asteroid.randomAsteroid = function(dimX, dimY) {
     var x = Math.random() * dimX;
     var y = Math.random() * dimY;
-    //CHANGE RANDOMVEC (should also have potential to be negative)
     var speed = 10;
 
+    // new random vec has potential to be negative
     var vecx = Math.floor(Math.random() * speed - speed/2);
     var vecy = Math.floor(Math.random() * speed - speed/2);
+
     if (vecx === 0 && vecy === 0) {
-      vecx = 1;
-      vecy = -1;
+      return Asteroid.randomAsteroid(dimX, dimY);
     };
 
-
+    var randomPos = [x, y];
     var randomVec = [vecx, vecy];
-    return new Asteroid([x,y], randomVec, Asteroid.RADIUS, Asteroid.COLOR);
+
+    return new Asteroid(randomPos, randomVec, Asteroid.RADIUS, Asteroid.COLOR);
   };
 })(this);
 

@@ -43,6 +43,7 @@
     if (this.radius + otherObject.radius >= dist){
       return true;
     }
+    
     return false;
   };
 })(this);

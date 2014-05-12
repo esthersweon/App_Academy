@@ -9,7 +9,7 @@
     this.intervalTimer = 0;
     this.bullets = [];
     this.image = new Image();
-    this.image.src = 'milky_way.jpeg';
+    this.image.src = 'cj.jpeg';
     this.image.width = "500";
   }
 
