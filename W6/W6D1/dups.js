@@ -1,9 +1,9 @@
 Array.prototype.uniq = function() {
-  var a = [];
+  var answer = [];
   for (var i = 0; i < this.length; i++){
-    if (a.indexOf(this[i]) == -1){
-      a.push(this[i]);
+    if (answer.indexOf(this[i]) == -1){
+      answer.push(this[i]);
     }
   }
-  return a
+  return answer;
 }

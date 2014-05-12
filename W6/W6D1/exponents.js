@@ -1,7 +1,7 @@
-var exp = function(number, ex){
-  if (ex == 0){
+function exp (base, power) {
+  if (power == 0){
     return 1;
   } else {
-    return exp(number, ex - 1) * number;
+    return exp(base, power - 1) * base;
   }
 }
