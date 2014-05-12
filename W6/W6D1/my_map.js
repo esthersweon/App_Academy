@@ -6,7 +6,7 @@ Array.prototype.myMap = function(callback) {
 };
 
 var callback = function(value) {
-  return value+=1;
+  return value+1;
 };
 
 // without callback

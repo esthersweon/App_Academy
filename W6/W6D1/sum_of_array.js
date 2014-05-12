@@ -1,10 +1,9 @@
-var arrSum = function (arr) {
-  if (arr.length == 1) {
-    return arr[0];
-  }
-  else {
-    var lessOne = arr.slice(0, arr.length - 1); // arr with one less element
-    var lastOne = arr[arr.length - 1]; // last element in array
-    return arrSum(lessOne) + lastOne;
-  }
+function arrSum(array) {
+	if (array.length === 0) {
+		return 0
+	} else if (array.length === 1) {
+		return array[0];
+	} else {
+		return arrSum(array.splice(1)) + array[0];
+	}
 }
