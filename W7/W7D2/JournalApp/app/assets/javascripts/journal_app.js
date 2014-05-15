@@ -4,6 +4,7 @@ window.JournalApp = {
   Views: {},
   Routers: {},
   initialize: function() {
+
     JournalApp.posts = new JournalApp.Collections.Posts();
 
     new JournalApp.Routers.Posts({

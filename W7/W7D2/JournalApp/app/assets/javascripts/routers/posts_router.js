@@ -5,8 +5,21 @@ JournalApp.Routers.Posts = Backbone.Router.extend({
 
   routes: {
     "": "index",
+    "posts/new": "new",
     "posts/:id": "show",
-    "posts/new": "new"
+    "posts/:id/edit": "edit"
+  },
+
+  edit: function (id) {
+    var that = this;
+
+    that._getPost(id, function (post) {
+      var formView = new JournalApp.Views.PostForm({
+        model: post
+      });
+
+      that._swapView(formView);
+    });
   },
 
   index: function () {
@@ -39,11 +52,11 @@ JournalApp.Routers.Posts = Backbone.Router.extend({
     var that = this;
 
     that._getPost(id, function (post) {
-      var formView = new JournalApp.Views.PostForm({
+      var showView = new JournalApp.Views.PostShow({
         model: post
       });
 
-      that._swapView(formView);
+      that._swapView(showView);
     });
   },
 
@@ -65,7 +78,7 @@ JournalApp.Routers.Posts = Backbone.Router.extend({
 
   _swapView: function (view) {
     this._currentView && this._currentView.remove();
-    this._currenView = view;
+    this._currentView = view;
     this.$rootEl.html(view.render().$el);
   }
 });

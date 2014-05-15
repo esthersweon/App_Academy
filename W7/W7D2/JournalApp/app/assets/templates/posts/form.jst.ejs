@@ -1,0 +1,13 @@
+<form>
+  <input
+    type="text"
+    name="title"
+    value="<%= post.escape("title") %>"
+  >
+
+  <textarea name="body"><%= post.escape("body") %></textarea>
+
+  <input type="submit">
+</form>
+
+<a href="#/">Back</a>

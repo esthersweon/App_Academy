@@ -1,12 +1,15 @@
-<h1>Posts Index</h1>
 <ul>
+  <% posts.each(function (post) { %>
+    <li>
+      <a href="#/posts/<%= post.id %>"><%= post.escape("title") %></a>
 
-	<% posts.each(function(post) { %>
-		<li>
-			<a href="#/posts/<%= post.id %>"><%= post.escape("title") %></a>
-			<button class="delete" data-id="<%= post.id %>">
-				Delete!
-			</button>
-		</li>
-	<% }); %>
+      <button class="delete" data-id="<%= post.id %>">
+        Delete!
+      </button>
+
+      <a href="#/posts/<%= post.id %>/edit">Edit</a>
+    </li>
+  <% }); %>
 </ul>
+
+<a href="#/posts/new">New Post</a>
