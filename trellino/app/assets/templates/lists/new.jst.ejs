@@ -1,0 +1,18 @@
+<h3>New List</h3>
+	<form>
+		<input type="hidden"
+			name="list[board_id]"
+			value="<%= board.escape("id") %>">
+
+		<input type="hidden"
+			name="list[rank]"
+			value="<%= rank %>">
+
+		<label for="list_title">List Title</label>
+			<input type="text"
+			id="list_title"
+			name="list[title]"
+			value="<%= list.title %>">
+
+		<input type="submit">
+	</form>

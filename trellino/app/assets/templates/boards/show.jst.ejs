@@ -1,0 +1,37 @@
+<h1><%= board.escape("title") %></h1>
+<br>
+
+<h4>Lists</h4>
+<ul>
+	<% _(_.sortBy(board.lists.models, function(list){ return list["rank"]}))
+			.each (function(list) { %>
+			<div class="list">
+				<li>
+					<%= list.escape("title") %><br>
+					//LIST ALL CARDS HERE//
+					<button class="newCard">New Card</button>
+				</li>
+			</div>
+	<% }); %>
+</ul>
+
+<br>
+<br>
+<br>
+
+<h4>Members</h4>
+<ul>
+	<% _(members).each ( function (member) { %>
+		<li><%= member.escape("email") %></li>
+	<% }); %>
+</ul>
+
+<div id="lists-new"></div>
+<div id="boardmembers-new"></div>
+<br>
+
+<button class="newList">New List</button>
+<button class="newBoardMember">New Board Member</button>
+<button class="destroy">Destroy Board</button>
+<br><br>
+<a href="#/">Back To Index</a>
