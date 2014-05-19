@@ -28,5 +28,4 @@ Trellino.Views.CardsNew = Backbone.View.extend({
 		})
 	}
 
-
 })

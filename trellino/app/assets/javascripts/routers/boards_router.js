@@ -6,7 +6,7 @@ Trellino.Routers.Boards = Backbone.Router.extend({
   routes: {
     "": "boardsIndex", 
     "boards/new": "boardsNew", 
-    "boards/:id": "boardsShow", 
+    "boards/:id": "boardShow", 
     "cards": "cardsIndex"
   }, 
 
@@ -29,28 +29,24 @@ Trellino.Routers.Boards = Backbone.Router.extend({
 
     var newBoard = new Trellino.Models.Board();
     var boardView = new Trellino.Views.BoardForm({
-      collection: Trellino.boards,
-      model: newBoard
+      model: newBoard,
+      collection: Trellino.boards
     });
 
     that._swapView(boardView);
   },
 
-  boardsShow: function (id) {
+  boardShow: function (id) {
     var that = this; 
-
-    that._getBoard(id, function (board) {
-      board.lists.fetch({
-        success: function () {
-          var showView = new Trellino.Views.BoardShow({
-            model: board, 
-            collection: board.lists, 
-            members: board.get("members")
-          });
-          that._swapView(showView);
-        }
-      });
+    var board = Trellino.boards.getOrFetch(id); 
+    var showView = new Trellino.Views.BoardShow({
+      model: board, 
+      collection: board.lists(),
+      members: board.get("members")
     });
+    board.lists().fetch();
+    that._swapView(showView);
+      
   },
 
   _getBoard: function (id, callback) {

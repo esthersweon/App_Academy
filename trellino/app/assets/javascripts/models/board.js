@@ -1,19 +1,20 @@
 Trellino.Models.Board = Backbone.Model.extend({	
 	urlRoot: "api/boards", 
 
-	initialize: function () {
-    	this.lists = new Trellino.Collections.Lists(this, {
-    		board: this
-    	})
-  	}, 
+  	lists: function(){
+		if(!this._lists){
+			this._lists = new Trellino.Collections.Lists([], {
+				board: this
+			});
+		}
+		return this._lists;
+  	},
 
   	parse: function (response) {
-	    var members = new Trellino.Collections.Users();
-	    _(response.members).each(function (member) {
-	      members.add(member);
-	    })
-	    response.members = members;
-	    
+  		if(response.lists){
+  			this.lists().set(response.lists, { parse: true });
+  			delete response.lists
+  		}
 	    return response;
   	}
 });

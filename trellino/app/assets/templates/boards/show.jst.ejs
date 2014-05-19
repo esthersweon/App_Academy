@@ -2,17 +2,7 @@
 <br>
 
 <h4>Lists</h4>
-<ul>
-	<% _(_.sortBy(board.lists.models, function(list){ return list["rank"]}))
-			.each (function(list) { %>
-			<div class="list">
-				<li>
-					<%= list.escape("title") %><br>
-					//LIST ALL CARDS HERE//
-					<button class="newCard">New Card</button>
-				</li>
-			</div>
-	<% }); %>
+<ul id="lists">
 </ul>
 
 <br>
