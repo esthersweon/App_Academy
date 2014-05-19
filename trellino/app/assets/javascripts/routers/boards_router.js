@@ -1,30 +1,30 @@
 Trellino.Routers.Boards = Backbone.Router.extend({
-	initialize: function (options) {
-		this.$rootEl = options.$rootEl;
-	}, 
+  initialize: function (options) {
+    this.$rootEl = options.$rootEl;
+  }, 
 
-	routes: {
-		"": "boardsIndex", 
-		"boards/new": "boardsNew", 
-		"boards/:id": "boardsShow", 
+  routes: {
+    "": "boardsIndex", 
+    "boards/new": "boardsNew", 
+    "boards/:id": "boardsShow", 
     "cards": "cardsIndex"
-	}, 
+  }, 
 
-	boardsIndex: function () {
-		var that = this; 
+  boardsIndex: function () {
+    var that = this; 
 
-		Trellino.boards.fetch({
-			success: function () {
-				var indexView = new Trellino.Views.BoardsIndex({
-					collection: Trellino.boards
-				});
+    Trellino.boards.fetch({
+      success: function () {
+        var indexView = new Trellino.Views.BoardsIndex({
+          collection: Trellino.boards
+        });
 
-				that._swapView(indexView);
-			}
-		});
-	}, 
+        that._swapView(indexView);
+      }
+    });
+  }, 
 
-	boardsNew: function () {
+  boardsNew: function () {
     var that = this;
 
     var newBoard = new Trellino.Models.Board();
@@ -37,9 +37,9 @@ Trellino.Routers.Boards = Backbone.Router.extend({
   },
 
   boardsShow: function (id) {
-  	var that = this; 
+    var that = this; 
 
-  	that._getBoard(id, function (board) {
+    that._getBoard(id, function (board) {
       board.lists.fetch({
         success: function () {
           var showView = new Trellino.Views.BoardShow({
@@ -50,23 +50,23 @@ Trellino.Routers.Boards = Backbone.Router.extend({
           that._swapView(showView);
         }
       });
-  	});
+    });
   },
 
   _getBoard: function (id, callback) {
-  	var board = Trellino.boards.get(id);
-  	if (!board) {
-  		board = new Trellino.Models.Board({ id: id });
-  		board.collection = Trellino.boards;
-  		board.fetch({
-  			success: function () {
-  				Trellino.boards.add(board);
-  				callback(board);
-  			}
-  		});
-  	} else {
-  		callback(board);
-  	}
+    var board = Trellino.boards.get(id);
+    if (!board) {
+      board = new Trellino.Models.Board({ id: id });
+      board.collection = Trellino.boards;
+      board.fetch({
+        success: function () {
+          Trellino.boards.add(board);
+          callback(board);
+        }
+      });
+    } else {
+      callback(board);
+    }
   },
 
   cardsIndex: function() {
@@ -74,10 +74,10 @@ Trellino.Routers.Boards = Backbone.Router.extend({
     this._swapView(myCardsView);
   },
 
-	_swapView: function(view) {
-		this._currentView && this._currentView.remove();
-		this._currentView = view;
-		this.$rootEl.html(view.render().$el);
-	}
+  _swapView: function(view) {
+    this._currentView && this._currentView.remove();
+    this._currentView = view;
+    this.$rootEl.html(view.render().$el);
+  }
 
 })
