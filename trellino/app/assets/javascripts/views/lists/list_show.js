@@ -6,8 +6,9 @@ Trellino.Views.ListShow = Backbone.CompositeView.extend({
 	}, 
 
 	initialize: function() {
-		this.listenTo(this.model.cards(), "sync", this.render);
-		this.listenTo(this.model.cards(), "add", this.addCard); 
+		this.listenTo(this.model, "sync", this.render);
+		this.listenTo(this.collection, "sync remove", this.render);
+		this.listenTo(this.collection, "add", this.addCard); 
 
 		var that = this;
 		this.model.cards().each (function(card) {
@@ -21,6 +22,7 @@ Trellino.Views.ListShow = Backbone.CompositeView.extend({
 	},
 
 	render: function() {
+		debugger;
 		var renderedContent = this.template({
 			list: this.model, 
 			cards: this.model.cards()
@@ -29,6 +31,7 @@ Trellino.Views.ListShow = Backbone.CompositeView.extend({
 		this.$el.html(renderedContent);
 
 		this.attachSubviews();
+
 		return this;
 	},
 
@@ -43,9 +46,7 @@ Trellino.Views.ListShow = Backbone.CompositeView.extend({
 	}, 
 
 	destroyList: function(event) {
-		debugger;
 		event.preventDefault();
 		this.model.destroy();
-		Backbone.history.navigate("boards/" + this.model.parent().id, { trigger: true });
 	}
 });
