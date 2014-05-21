@@ -2,13 +2,12 @@
 #
 # Table name: projects
 #
-#  id           :integer          not null, primary key
-#  title        :string(255)      not null
-#  course       :string(255)      not null
-#  description  :string(255)      not null
-#  created_at   :datetime
-#  updated_at   :datetime
-#  moderator_id :integer
+#  id          :integer          not null, primary key
+#  title       :string(255)      not null
+#  course      :string(255)      not null
+#  description :string(255)      not null
+#  created_at  :datetime
+#  updated_at  :datetime
 #
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html

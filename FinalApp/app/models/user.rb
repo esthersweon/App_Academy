@@ -18,10 +18,6 @@ class User < ActiveRecord::Base
 
 	attr_reader :password 
 
-	has_many :projects, foreign_key: :moderator_id, inverse_of: :moderator
-	has_many :project_phases, through: :projects, source: :project_phases
-	has_many :phases, inverse_of: :user
-
 	def self.find_by_credentials(username, password)
 		@user = User.find_by_username(username)
 		return nil if @user.nil?

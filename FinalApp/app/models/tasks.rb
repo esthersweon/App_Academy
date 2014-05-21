@@ -14,7 +14,6 @@ class Tasks < ActiveRecord::Base
 	validates :title, :phase_id, presence: true
 
 	belongs_to :phase, inverse_of: :tasks
-	belongs_to :user, inverse_of: :tasks
 	
 	has_many :child_tasks,
 	class_name: "Task", 

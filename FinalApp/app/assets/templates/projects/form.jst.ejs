@@ -1,0 +1,31 @@
+<form>
+  
+	<label>Project Title
+  <input
+    type="text"
+    name="title"
+    value="<%= project.escape("title") %>"
+  >
+  </label>
+  <br>
+
+  <label>Course
+  <input
+    type="text"
+    name="course"
+    value="<%= project.escape("course") %>"
+  >
+  </label>
+  <br>
+
+  <label>Project Description
+  <input
+    type="text"
+    name="description"
+    value="<%= project.escape("description") %>"
+  >
+  <br>
+
+  <input type="submit">
+  
+</form>

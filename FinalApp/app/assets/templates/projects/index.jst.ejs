@@ -1,0 +1,16 @@
+<h3>My Projects<h3>
+
+<ul>
+
+<% projects.each (function(project) { %>
+	<li>
+		<a href="#/projects/<%= project.id %>"><%= project.escape("title") %></a>
+	</li>
+<% }) %>
+
+</ul>
+
+<br>
+<br>
+
+<a href="#/projects/new">Create a New Project</a>

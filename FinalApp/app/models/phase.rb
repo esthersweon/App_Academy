@@ -8,14 +8,13 @@
 #  end_date    :date             not null
 #  created_at  :datetime
 #  updated_at  :datetime
+#  project_id  :integer
 #
 
 class Phase < ActiveRecord::Base
-	validates :title, :description, :end_date, presence: true
+	validates :title, :end_date, :project_id, presence: true
 
-	has_many :project_phases, inverse_of: :phase, dependent: :destroy
-	has_many :projects, through: :project_phases, source: :project
+	belongs_to :project, inverse_of: :phases
 	has_many :tasks, inverse_of: :phase
-	belongs_to :user, inverse_of: :phases
 
 end
