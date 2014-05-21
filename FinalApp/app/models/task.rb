@@ -10,7 +10,7 @@
 #  updated_at     :datetime
 #
 
-class Tasks < ActiveRecord::Base
+class Task < ActiveRecord::Base
 	validates :title, :phase_id, presence: true
 
 	belongs_to :phase, inverse_of: :tasks

@@ -11,3 +11,14 @@
  *= require_self
  *= require_tree .
  */
+
+
+.phase {
+	float: left;
+	width: 300px;
+}
+
+.project {
+	float: left;
+	width: 200px;
+}

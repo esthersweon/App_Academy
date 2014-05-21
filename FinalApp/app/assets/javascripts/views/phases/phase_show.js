@@ -9,18 +9,15 @@ FinalApp.Views.PhaseShow = Backbone.CompositeView.extend({
 		this.listenTo(this.model, "sync", this.render);
 		this.listenTo(this.collection, "sync remove", this.render);
 		this.listenTo(this.collection, "add", this.addTask); 
-
-		var that = this;
-		this.model.tasks().each (function(task) {
-			that.addTask(task);
-		})
+		this.collection.fetch();
 	},
 
 	addTask: function(task) {
+		var that = this;
 		var taskView = new FinalApp.Views.TaskShow({
-			model: task
-		});
-		this.addSubview('#tasks', taskView);	
+				model: task, 
+			});
+		that.addSubview('#tasks', taskView);
 	},
 
 	render: function() {
