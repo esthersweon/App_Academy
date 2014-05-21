@@ -1,0 +1,23 @@
+# == Schema Information
+#
+# Table name: tasks
+#
+#  id             :integer          not null, primary key
+#  title          :string(255)      not null
+#  parent_task_id :integer          not null
+#  phase_id       :integer          not null
+#  created_at     :datetime
+#  updated_at     :datetime
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  parent_task_id: 1
+  phase_id: 1
+
+two:
+  title: MyString
+  parent_task_id: 1
+  phase_id: 1

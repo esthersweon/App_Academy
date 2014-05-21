@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>FinalApp</title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+</head>
+
+<body>
+	<h1>Esther's Final App</h1>
+  <% if signed_in? %>
+    <%= button_to "Log out", session_url, { method: :delete } %>
+  <% end %>
+
+<%= yield %>
+
+</body>
+</html>
