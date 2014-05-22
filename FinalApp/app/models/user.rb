@@ -16,6 +16,8 @@ class User < ActiveRecord::Base
 	validates :username, uniqueness: true
 	validates :password, length: {minimum: 6, allow_nil: true}
 
+	has_many :projects, inverse_of: :user
+
 	attr_reader :password 
 
 	def self.find_by_credentials(username, password)

@@ -1,7 +1,7 @@
 FinalApp::Application.routes.draw do
   root to: 'static_pages#root'
   resource :session, only: [:new, :create, :destroy]
-  resources :users, only: [:new, :create]
+  resources :users, only: [:new, :index, :create]
 
   namespace :api, defaults: { format: :json } do
 
@@ -10,10 +10,10 @@ FinalApp::Application.routes.draw do
     end
 
     resources :phases, only: [:show, :update, :destroy] do
-      resources :tasks, only: [:create, :index]
+      resources :tasks, only: [:create, :index, :destroy]
     end
 
-    resources :tasks, only: [:show, :update, :destroy]
+    resources :tasks, only: [:show, :update]
 
   end
 

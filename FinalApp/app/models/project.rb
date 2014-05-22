@@ -11,7 +11,9 @@
 #
 
 class Project < ActiveRecord::Base
-	validates :title, :course, :description, presence: true
+	validates :title, :description, :user_id, presence: true
+
+	belongs_to :user, inverse_of: :projects
 
 	has_many :phases, inverse_of: :project, dependent: :destroy
 end

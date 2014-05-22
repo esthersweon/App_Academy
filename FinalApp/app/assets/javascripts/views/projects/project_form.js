@@ -6,6 +6,7 @@ FinalApp.Views.ProjectForm = Backbone.View.extend({
 	template: JST['projects/form'], 
 
 	render: function() {
+		debugger;
 		var renderedContent = this.template({
 			project: this.model
 		});

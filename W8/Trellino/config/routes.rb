@@ -16,5 +16,5 @@ Trellino::Application.routes.draw do
   end
 
   resource :session, only: [:new, :create, :destroy]
-  resources :users, only: [:new, :create, :destroy]
+  resources :users, only: [:new, :index, :create, :destroy]
 end

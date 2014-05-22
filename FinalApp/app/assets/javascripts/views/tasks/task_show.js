@@ -5,7 +5,7 @@ FinalApp.Views.TaskShow = Backbone.CompositeView.extend({
 	}, 
 
 	initialize: function() {
-		this.listenTo(this.model, "sync", this.render)
+		this.listenTo(this.model, "sync remove", this.render);
 	},
 
 	render: function() {
@@ -16,11 +16,18 @@ FinalApp.Views.TaskShow = Backbone.CompositeView.extend({
 		this.$el.html(renderedContent);
 
 		this.attachSubviews();
+
 		return this;
 	}, 
 
 	destroyTask: function(event) {
+		var that = this;
 		event.preventDefault();
 		this.model.destroy();
+		this.model.fetch({
+			success: function () {
+				that.render;
+			}
+		});
 	}
 });

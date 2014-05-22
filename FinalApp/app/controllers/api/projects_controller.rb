@@ -1,7 +1,7 @@
 module Api
   class ProjectsController < ApiController
     def index
-      @projects = Project.all
+      @projects = Project.where(:user_id => current_user.id)
       render json: @projects
     end
 
@@ -12,6 +12,7 @@ module Api
 
     def create
       @project = Project.new(project_params)
+      @project.user_id = current_user.id
       if @project.save
         render json: @project
       else
@@ -43,7 +44,7 @@ module Api
 
     private
     def project_params
-      params.require(:project).permit(:title, :course, :description)
+      params.require(:project).permit(:title, :description)
     end
   end
 end
