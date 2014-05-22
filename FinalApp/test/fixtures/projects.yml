@@ -4,10 +4,10 @@
 #
 #  id          :integer          not null, primary key
 #  title       :string(255)      not null
-#  course      :string(255)      not null
 #  description :string(255)      not null
 #  created_at  :datetime
 #  updated_at  :datetime
+#  user_id     :integer
 #
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html

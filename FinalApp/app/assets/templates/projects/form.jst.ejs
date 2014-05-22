@@ -1,6 +1,6 @@
 <form>
   
-	<label>Project Title
+	<label>Project Title: 
 
   <input
     type="text"
@@ -10,7 +10,16 @@
   </label>
   <br>
 
-  <label>Project Description
+  <label>Project End Date: 
+  <input
+    type="date"
+    name="end_date"
+    value="<%= project.escape("end_date") %>"
+  >
+  </label>
+  <br>
+
+  <label>Project Description: 
   <input
     type="text"
     name="description"
