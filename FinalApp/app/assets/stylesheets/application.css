@@ -12,6 +12,15 @@
  *= require_tree .
  */
 
+div#content {
+  margin:50px auto;
+  width: auto;
+  
+  padding: 10px;
+  margin-bottom: 10px;
+  
+  overflow-x: scroll;
+}
 
 .phase {
 	float: left;
@@ -20,5 +29,5 @@
 
 .project {
 	float: left;
-	width: 200px;
+	width: 300px;
 }

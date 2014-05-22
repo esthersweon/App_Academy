@@ -2,7 +2,7 @@ FinalApp.Views.ProjectShow = Backbone.CompositeView.extend({
 	template: JST['projects/show'],
 
 	events: {
-		"click button.destroy": "destroyProject", 
+		"click button.destroyProject": "destroyProject", 
 		"click button.newPhase": "newPhase"
 	},
 
@@ -25,8 +25,6 @@ FinalApp.Views.ProjectShow = Backbone.CompositeView.extend({
 	},
 
 	render: function() {
-		var that = this;
-		var members = this.model.get("members");
 		var renderedContent = this.template({
 			project: this.model, 
 			members: members

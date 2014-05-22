@@ -5,15 +5,21 @@ window.FinalApp = {
   Routers: {},
   initialize: function() {
     FinalApp.projects = new FinalApp.Collections.Projects();
-    FinalApp.projects.fetch({
-    	success: function() {
-    		new FinalApp.Routers.Projects({
-    			$rootEl: $('#content'), 
-    			projects: FinalApp.projects
-    		});
-    Backbone.history.start();
-    	}
-    })
+    FinalApp.members = new FinalApp.Collections.Members();
+    FinalApp.members.fetch({
+      success: function() {
+        FinalApp.projects.fetch({
+          success: function() {
+          new FinalApp.Routers.Projects({
+            $rootEl: $('#content'), 
+            projects: FinalApp.projects, 
+            members: FinalApp.members
+          });
+          Backbone.history.start();
+          }
+        });
+      }
+    });
   }
 };
 

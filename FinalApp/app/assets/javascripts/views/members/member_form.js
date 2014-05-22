@@ -1,13 +1,13 @@
-FinalApp.Views.ProjectForm = Backbone.View.extend({
+FinalApp.Views.MemberForm = Backbone.View.extend({
 	events: {
 		'click input[type="submit"]': "submit"
 	}, 
 
-	template: JST['projects/form'], 
+	template: JST['members/form'], 
 
 	render: function() {
 		var renderedContent = this.template({
-			project: this.model
+			member: this.model
 		});
 
 		this.$el.html(renderedContent);
@@ -19,9 +19,9 @@ FinalApp.Views.ProjectForm = Backbone.View.extend({
 		event.preventDefault();
 		var attrs = $(event.target.form).serializeJSON();
 
-		var newProject = this.collection.create(attrs, {
-			success: function(savedProject) {
-				Backbone.history.navigate("#projects/" + savedProject.id, {trigger: true});
+		var newMember = this.collection.create(attrs, {
+			success: function(savedMember) {
+				Backbone.history.navigate("#members/" + savedMember.id, {trigger: true});
 			}
 		});
 	}

@@ -17,6 +17,7 @@ class User < ActiveRecord::Base
 	validates :password, length: {minimum: 6, allow_nil: true}
 
 	has_many :projects, inverse_of: :user
+	has_many :members, inverse_of: :user
 
 	attr_reader :password 
 

@@ -1,55 +1,80 @@
 FinalApp.Routers.Projects = Backbone.Router.extend({
 	initialize: function (options) {
 		this.projects = options.projects;
+		this.members = options.members;
 		this.$rootEl = options.$rootEl;
 	}, 
 
 	routes: {
 		"": "projectsIndex", 
 		"projects/new": "projectsNew", 
-		"projects/:id": "projectShow"
+		"projects/:id": "projectShow", 
+		"members/new": "membersNew", 
+		"members/:id": "memberShow"
 	}, 
 
 	projectsIndex: function() {
-		var that = this; 
+		var that = this;
+		
+		this.members.fetch({
+			success: function() {
+				that.projects.fetch({
+					success: function () {
+						var indexView = new FinalApp.Views.ProjectsIndex({
+							collection: that.projects, 
+							collection2: that.members
+						});
 
-		this.projects.fetch({
-			success: function () {
-				var indexView = new FinalApp.Views.ProjectsIndex({
-					collection: that.projects 
+					that._swapView(indexView);
+					}
 				});
-
-				that._swapView(indexView);
 			}
 		});
+
+		
 	}, 
 
 	projectsNew: function() {
-		var that = this;
-
 		var newProject = new FinalApp.Models.Project();
 		var projectView = new FinalApp.Views.ProjectForm({
 			model: newProject,
 			collection: this.projects 
 		});
 
-		that._swapView(projectView);
+		this._swapView(projectView);
 	},
 
 	projectShow: function(id) {
-		var that = this; 
 		var project = this.projects.getOrFetch(id);
 		var showView = new FinalApp.Views.ProjectShow({
 			model: project,
 			collection: project.phases()
 		});
 		project.phases().fetch();
-		that._swapView(showView);
+		this._swapView(showView);
+	},
+
+	membersNew: function() {
+		var newMember = new FinalApp.Models.Member();
+		var memberView = new FinalApp.Views.MemberForm({
+			model: newMember, 
+			collection: this.members
+		});
+
+		this._swapView(memberView);
+	},
+
+	memberShow: function(id) {
+		var member = this.members.getOrFetch(id);
+		var memberShowView = new FinalApp.Views.MemberShow({
+			model: member
+		});
+		this._swapView(memberShowView);
 	},
 
 	_swapView: function(view) {
 		this._currentView && this._currentView.remove();
-    this._currentView = view;
-    this.$rootEl.html(view.render().$el);
+    	this._currentView = view;
+    	this.$rootEl.html(view.render().$el);
 	}
 })

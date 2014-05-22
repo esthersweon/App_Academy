@@ -8,6 +8,7 @@
 #  created_at  :datetime
 #  updated_at  :datetime
 #  user_id     :integer
+#  end_date    :date
 #
 
 class Project < ActiveRecord::Base

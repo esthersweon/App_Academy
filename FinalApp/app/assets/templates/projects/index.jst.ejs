@@ -1,4 +1,18 @@
-<h3> Team Projects<h3>
+<h1>Team HomePage<h1>
+
+<h2>Team Members</h2>
+
+<ul>
+
+<% members.each (function(member) { %>
+	<li class="member">
+		<a href="#/members/<%= member.id %>"><%= member.escape("lname") + ", " + member.escape("fname")%></a>
+	</li>
+<% }) %>
+
+</ul>
+
+<h2>Team Projects</h2>
 
 <ul>
 
@@ -12,5 +26,7 @@
 
 <br>
 <br>
+<br>
 
-<a href="#/projects/new">Create a New Project</a>
+<h2><a href="#/projects/new">Create a New Project</a></h2>
+<h2><a href="#/members/new">Add a Team Member</a></h2>
